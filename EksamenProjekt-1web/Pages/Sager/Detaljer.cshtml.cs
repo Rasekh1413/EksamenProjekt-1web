@@ -12,6 +12,8 @@ public class Detaljer : PageModel
 {
 	private ISagRepository _sagRepo;
 
+	[BindProperty]
+
 	public Sag Sagen { get; set; }
 
 

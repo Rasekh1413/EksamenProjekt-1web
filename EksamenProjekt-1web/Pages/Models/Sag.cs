@@ -1,8 +1,11 @@
 ﻿
 public class Sag : HarId
 {
+	private List<Sag> _sagsElementer;
 
-    public string FejlBeskrivelse { get; set; }
+	public Sag? Sagen { get; set; }
+
+	public string FejlBeskrivelse { get; set; }
 
     public string Modelår { get; set; }
 
@@ -10,7 +13,6 @@ public class Sag : HarId
 
     public string NummerPlade { get; set; }
 
-    public Sag() { }
 
     public Sag(string fejlBeskrivelse, string modelår, string modelType, string nummerPlade)
     {
@@ -20,6 +22,14 @@ public class Sag : HarId
         ModelType=modelType;
         NummerPlade=nummerPlade;
     }
+	public Sag() // NB: Nødvendig fordi vi er i en Razor Pages app.
+	{
+		_sagsElementer = new List<Sag>();
+	}
+	public void TilføjSagsElement(Sag sagsElement)
+	{
+		_sagsElementer.Add(sagsElement);
+	}
 
 }
 

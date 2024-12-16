@@ -1,10 +1,9 @@
 ﻿@page
-@model EksamenProjekt_1web.Pages.Sager.Pages_Sager_Detaljer
+@model EksamenProjekt_1web.Pages.Sager.Detaljer
 @{
 }
 
-<h1>Sag @Model.Sagen.HarId (@Model.Sagen.Navn, @Model.Sagen.Nummerplade)</h1>
-
+<h1>Sag @Model.Sagen.sagId (@Model.Sagen.Sag?.Navn, @Model.Sagen.Sag?.Nummerplade)</h1> 
 <table class="table table-bordered table-hover table-striped">
 	<thead>
 		<tr>
@@ -28,23 +27,20 @@
 	<tbody>
 		@if (Model.Sagen.Sag != null)
 		{
-			foreach (var sagsElement in Model.Sagen.Sag)
+			foreach (var sagsElement in Model.Sagen.sagId) // Den Piver her
 			{
 				<tr>
 					<td>
-						@sagsElement.Beskrivelse
+						@sagsElement.FejlBeskrivelse
 					</td>
 					<td>
-						@sagsElement.PrisForDele
+						@sagsElement.Modelår
 					</td>
 					<td>
-						@sagsElement.Timer
+						@sagsElement.ModelType
 					</td>
 					<td>
-						@sagsElement.UdførtAf?.Navn
-					</td>
-					<td>
-						@sag.Nummerplade
+						@sagsElement.Nummerplade
 					</td>
 				</tr>
 			}
@@ -59,8 +55,6 @@
 			</td>
 			<td>
 			</td>
-			<td class="fw-bold">
-				@Model.Sagen.TotalPris kr.
 			</td>
 		</tr>
 	</tbody>

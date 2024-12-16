@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace BilVærksted.Pages.Sager;
+namespace EksamenProjekt_1web.Pages.Sager;
 
 /// <summary>
 /// PageModel-klasse for "Opret Sag".
@@ -18,24 +18,21 @@ public class OpretModel : PageModel
 	public Sag NySag { get; set; }
 
 	[BindProperty]
-	public int BilId { get; set; }  // NB: Bruges af SelectList
+	public int SagId { get; set; }
 
-	/// <summary>
-	/// Denne SelectList gør det muligt at vælge mellem de eksisterende Biler,
-	/// når en ny Sag skal oprettes.
-	/// NB: Bruges af <select>-tag på Page.
-	/// </summary>
-	public SelectList Biler { get; set; }
+	public SelectList Sag { get; set; }
 
 	public OpretModel(IKundeRepository kundeRepo, ISagRepository sagRepo)
 	{
 		
 		_sagRepo = sagRepo;
+
+		Sag = new SelectList(_sagRepo.All, nameof(SagId));
 	}
 
 	public IActionResult OnPost()
 	{
-
+		NySag.Sagen = _sagRepo.Read(SagId);
 		if (!ModelState.IsValid)
 		{
 			return Page();

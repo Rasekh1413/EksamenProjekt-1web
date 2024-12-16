@@ -1,5 +1,5 @@
 ﻿@page
-@model EksamenProjekt_1web.Pages.Sager.Pages_Sager_Opret
+@model EksamenProjekt_1web.Pages.Sager.OpretModel
 @{
 }
 
@@ -7,7 +7,7 @@
 
 <form method="post">
 	<div class="form-group">
-		<label asp-for="NySag." class="control-label"></label>
+		<label asp-for="NySag" class="control-label"></label>
 		<select asp-for="SagId" asp-items="@Model.Sag" class="form-control"></select>
 	</div>
 	<p>
