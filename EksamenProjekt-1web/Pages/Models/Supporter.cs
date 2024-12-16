@@ -1,6 +1,5 @@
-﻿public class Supporter
-{
-    public string SupporterId { get; set; }
+﻿public class Supporter : HarId
+{ 
 
     public string Navn { get; set; }
 
@@ -10,9 +9,8 @@
 
     public Supporter() { }
 
-    public Supporter (string supporterId, string navn, int telefonNummer, string eMail)
+    public Supporter (string navn, int telefonNummer, string eMail)
     {
-        SupporterId = supporterId;
         Navn = navn;
         TelefonNummer = telefonNummer;
         EMail = eMail;

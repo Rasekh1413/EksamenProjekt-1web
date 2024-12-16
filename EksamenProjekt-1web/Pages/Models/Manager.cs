@@ -1,6 +1,5 @@
-﻿public class Manager
+﻿public class Manager : HarId
 {
-    public string ManagerId { get; set; }
 
     public string Navn { get; set; }
 
@@ -8,9 +7,9 @@
 
     public Manager() { }
 
-    public Manager (string managerId, string navn)
+    public Manager (string navn)
     {
-        ManagerId = managerId;
+        
         Navn = navn;
     }
 

@@ -1,25 +1,25 @@
 ﻿
-public class Sag
+public class Sag : HarId
 {
 
-    public string SagId { get; set; }
+    public string FejlBeskrivelse { get; set; }
 
-    public string SagFejlBeskrivelse { get; set; }
+    public string Modelår { get; set; }
 
-    public string SagModelår { get; set; }
+    public string ModelType { get; set; }
 
-    public string SagModelType { get; set; }
-
-    public string SagNummerPlade { get; set; }
+    public string NummerPlade { get; set; }
 
     public Sag() { }
 
-    public Sag(string sagId, string sagFejlBeskrivelse, string sagModelår, string sagModelType, string sagNummerPlade)
+    public Sag(string fejlBeskrivelse, string modelår, string modelType, string nummerPlade)
     {
-        SagId=sagId;
-        SagFejlBeskrivelse=sagFejlBeskrivelse;
-        SagModelår=sagModelår;
-        SagModelType=sagModelType;
-        SagNummerPlade=sagNummerPlade;
+        
+        FejlBeskrivelse=fejlBeskrivelse;
+        Modelår=modelår;
+        ModelType=modelType;
+        NummerPlade=nummerPlade;
     }
+
 }
+

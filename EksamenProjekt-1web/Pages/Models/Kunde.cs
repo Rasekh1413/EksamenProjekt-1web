@@ -1,4 +1,4 @@
-﻿public class Kunde
+﻿public class Kunde : HarId
 {
    
 

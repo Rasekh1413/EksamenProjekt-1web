@@ -1,0 +1,75 @@
+﻿@page
+@model EksamenProjekt_1web.Pages.Sager.Pages_Sager_Detaljer
+@{
+}
+
+<h1>Sag @Model.Sagen.HarId (@Model.Sagen.Navn, @Model.Sagen.Nummerplade)</h1>
+
+<table class="table table-bordered table-hover table-striped">
+	<thead>
+		<tr>
+			<th>
+				Fejlbeskrivelse
+			</th>
+			<th>
+				ModelÅr
+			</th>
+			<th>
+				ModelType
+			</th>
+			<th>
+			    NummerPlade
+			</th>
+			<th>
+				Total pris
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@if (Model.Sagen.Sag != null)
+		{
+			foreach (var sagsElement in Model.Sagen.Sag)
+			{
+				<tr>
+					<td>
+						@sagsElement.Beskrivelse
+					</td>
+					<td>
+						@sagsElement.PrisForDele
+					</td>
+					<td>
+						@sagsElement.Timer
+					</td>
+					<td>
+						@sagsElement.UdførtAf?.Navn
+					</td>
+					<td>
+						@sag.Nummerplade
+					</td>
+				</tr>
+			}
+		}
+		<tr>
+			<td class="fw-bold">
+				Total
+			</td>
+			<td>				
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td class="fw-bold">
+				@Model.Sagen.TotalPris kr.
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<td>
+	<a class="btn btn-primary btn-sm" type="button" title="Tilføj" asp-page="Tilføj" asp-route-sagId="@Model.Sagen.Id">Tilføj</a>
+</td>
+<td>
+	<a class="btn btn-primary btn-sm" type="button" title="Alle" asp-page="Alle">Oversigt</a>
+</td>
