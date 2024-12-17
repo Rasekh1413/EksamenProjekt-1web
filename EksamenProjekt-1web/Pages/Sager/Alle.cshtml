@@ -1,0 +1,46 @@
+﻿@page
+@model EksamenProjekt_1web.Pages.Sager.AlleModel
+@{
+}
+<h1>Personer (@Model.Sager.Count ialt) </h1>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>
+                Navn
+            </th>
+            <th>
+                Email
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Sager != null)
+        {
+            foreach (Sag sag in Model.Sager)
+            {
+                <tr>
+                    <td>
+                        @sag.FejlBeskrivelse
+                    </td>
+                    <td>
+                        @sag.Modelår
+                    </td>
+                    <td>
+                        @sag.ModelType
+                    </td>
+                    <td>
+                        @sag.NummerPlade
+                    </td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" type="button" title="Slet" asp-page="Slet" asp-route-id="@sag.Id">Slet</a>
+                    </td>
+
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-primary" asp-page="Opret"> Opret en ny Person </a>
