@@ -10,16 +10,19 @@ namespace EksamenProjekt_1web.Pages.Sager;
 /// </summary>
 public class Detaljer : PageModel
 {
-	private ISagRepository _sagRepo;
+	public  ISagRepository _SagRepo { get; set; }
 
 	[BindProperty]
 
 	public Sag Sagen { get; set; }
 
+	public Sag SagRepo { get; set; }
 
-	public Detaljer(ISagRepository sagRepo)
+
+
+public Detaljer(ISagRepository SagRepo)
 	{
-		_sagRepo = sagRepo;
+		_SagRepo = SagRepo;
 	}
 
 	/// <summary>
@@ -29,8 +32,13 @@ public class Detaljer : PageModel
 	/// </summary>
 	public virtual IActionResult OnGet(int sagId)
 	{
-		Sagen = _sagRepo.Read(sagId);
+		Sagen = _SagRepo.Read(sagId);
 
 		return Page();
+
+
 	}
+
+	
 }
+

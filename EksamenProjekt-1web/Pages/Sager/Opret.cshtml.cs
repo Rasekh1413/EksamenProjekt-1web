@@ -17,22 +17,16 @@ public class OpretModel : PageModel
 	[BindProperty]
 	public Sag NySag { get; set; }
 
-	[BindProperty]
-	public int SagId { get; set; }
-
-	public SelectList Sag { get; set; }
-
-	public OpretModel(IKundeRepository kundeRepo, ISagRepository sagRepo)
+	public OpretModel( ISagRepository sagRepo)
 	{
 		
 		_sagRepo = sagRepo;
 
-		Sag = new SelectList(_sagRepo.All, nameof(SagId));
 	}
 
 	public IActionResult OnPost()
 	{
-		NySag.Sagen = _sagRepo.Read(SagId);
+		
 		if (!ModelState.IsValid)
 		{
 			return Page();

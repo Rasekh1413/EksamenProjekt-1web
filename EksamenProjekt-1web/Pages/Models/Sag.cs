@@ -1,9 +1,8 @@
 ﻿
+using System.Xml.Linq;
+
 public class Sag : HarId
 {
-	private List<Sag> _sagsElementer;
-
-	public Sag? Sagen { get; set; }
 
 	public string FejlBeskrivelse { get; set; }
 
@@ -13,6 +12,8 @@ public class Sag : HarId
 
     public string NummerPlade { get; set; }
 
+   
+
 
     public Sag(string fejlBeskrivelse, string modelår, string modelType, string nummerPlade)
     {
@@ -21,15 +22,14 @@ public class Sag : HarId
         Modelår=modelår;
         ModelType=modelType;
         NummerPlade=nummerPlade;
+       
     }
-	public Sag() // NB: Nødvendig fordi vi er i en Razor Pages app.
+	public Sag()
+        // NB: Nødvendig fordi vi er i en Razor Pages app.
 	{
-		_sagsElementer = new List<Sag>();
-	}
-	public void TilføjSagsElement(Sag sagsElement)
-	{
-		_sagsElementer.Add(sagsElement);
+	
 	}
 
 }
+
 

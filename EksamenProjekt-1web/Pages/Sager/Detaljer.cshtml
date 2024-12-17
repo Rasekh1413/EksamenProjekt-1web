@@ -3,7 +3,7 @@
 @{
 }
 
-<h1>Sag @Model.Sagen.sagId (@Model.Sagen.Sag?.Navn, @Model.Sagen.Sag?.Nummerplade)</h1> 
+<h1>Sag @Model.Sagen.Id (@Model.Sagen.NummerPlade)</h1> 
 <table class="table table-bordered table-hover table-striped">
 	<thead>
 		<tr>
@@ -19,35 +19,27 @@
 			<th>
 			    NummerPlade
 			</th>
-			<th>
-				Total pris
-			</th>
 		</tr>
 	</thead>
 	<tbody>
-		@if (Model.Sagen.Sag != null)
-		{
-			foreach (var sagsElement in Model.Sagen.sagId) // Den Piver her
-			{
 				<tr>
 					<td>
-						@sagsElement.FejlBeskrivelse
+						@Model.Sagen.FejlBeskrivelse
 					</td>
 					<td>
-						@sagsElement.Modelår
+						@Model.Sagen.Modelår
 					</td>
 					<td>
-						@sagsElement.ModelType
+						@Model.Sagen.ModelType
 					</td>
 					<td>
-						@sagsElement.Nummerplade
+						@Model.Sagen.NummerPlade
 					</td>
 				</tr>
-			}
-		}
+		
 		<tr>
 			<td class="fw-bold">
-				Total
+				
 			</td>
 			<td>				
 			</td>
