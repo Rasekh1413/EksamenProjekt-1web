@@ -38,7 +38,5 @@ app.Run();
 
 // Medina
 
-// det er Elizabeth 
-
 // Tobias 
 
