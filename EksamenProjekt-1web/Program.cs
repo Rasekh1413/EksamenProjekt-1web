@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
+// den her ned hvis man har ikke tilføj det, så crasher sager og kunde knappen.
 builder.Services.AddScoped<ISagRepository, SagRepository>();      // Tilføj fra Rasekh
 builder.Services.AddScoped<IKundeRepository, KundeRepository>();  // Tilføj fra Rasekh
 
