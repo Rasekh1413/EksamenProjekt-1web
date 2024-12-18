@@ -1,7 +1,12 @@
+using EksamenProjekt_1web.Services.Interfaces;
+using EksamenProjekt_1web.Services.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddScoped<ISagRepository, SagRepository>();  // Tilføj fra Rasekh
 
 var app = builder.Build();
 
