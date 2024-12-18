@@ -34,10 +34,15 @@ public Detaljer(ISagRepository SagRepo)
 	{
 		Sagen = _SagRepo.Read(sagId);
 
-		return Page();
+        if (Sagen == null)
+        {
+            return RedirectToPage("/Privacy"); // her hvis programmen kan ikke funde nogle, så gå den direkte til Pricacy side, eller bruge en URL side
+        }
+		else
+        return Page();
 
 
-	}
+    }
 
 	
 }
