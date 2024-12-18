@@ -9,15 +9,15 @@ namespace EksamenProjekt_1web.Pages.Sager;
 /// <summary>
 /// PageModel-klasse for "Opret Sag".
 /// </summary>
+///
 public class OpretModel : PageModel
 {
-	
 	private ISagRepository _sagRepo;
 
 	[BindProperty]
 	public Sag NySag { get; set; }
 
-	public OpretModel( ISagRepository sagRepo)
+	public OpretModel(ISagRepository sagRepo)
 	{
 		
 		_sagRepo = sagRepo;

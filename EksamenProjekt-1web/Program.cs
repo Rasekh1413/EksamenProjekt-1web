@@ -1,12 +1,17 @@
 using EksamenProjekt_1web.Services.Interfaces;
 using EksamenProjekt_1web.Services.Repository;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddScoped<ISagRepository, SagRepository>();  // Tilføj fra Rasekh
+builder.Services.AddScoped<ISagRepository, SagRepository>();      // Tilføj fra Rasekh
+builder.Services.AddScoped<IKundeRepository, KundeRepository>();  // Tilføj fra Rasekh
+
+
+
 
 var app = builder.Build();
 
