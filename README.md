@@ -1,6 +1,11 @@
-Eksamen projekt til semester 1 på Datamatiker hos Sjællands erhvervsakademi
+<h1>Eksamens projekt til semester 1 <br>på Datamatiker hos Sjællands erhvervsakademi</h1>
 
-Her er vores Github hvor lægger vores kode for projektet som er lavet af C# og HTML programming sprog som køre på Razor Pages i Microsoft Visual Studio.
+Dette projektet i Github har Tobias, Medina og Rasekh som elever hos Sjællands erhvervsakademi, åbnede for at lave vores Eksamens Projekt 1 semester. Her er vores Github hvor vi har lagt vores kode for projektet som er lavet af C# og HTML med lidt CSS og Javascript programmerings, sprog som køre på Razor Pages i Microsoft Visual Studio.
 Med venlig hilsen
 
-Copyright 2024 - 🍃 Rasekh og Medina og Tobias og Elizabeth og Aya
+Projektet er en prototype.
+
+Gruppearbejde af projektet: Tobias, Medina og Rasekh
+
+<br><br><br><br>
+&copy; 2024 - Eksamen projekt semester 1 - 🍃 Rasekh | Medina | Tobias
