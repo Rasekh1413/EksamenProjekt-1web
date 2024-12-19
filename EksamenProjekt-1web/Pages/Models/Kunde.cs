@@ -1,8 +1,6 @@
 ﻿
     public class Kunde : HarId
     {
-
-
         public string? Navn { get; set; }
         public int TelefonNummer { get; set; }
         public string EMail { get; set; }
@@ -14,6 +12,4 @@
             TelefonNummer = telefonummer;
             EMail = eMail;
         }
-
-
     }
